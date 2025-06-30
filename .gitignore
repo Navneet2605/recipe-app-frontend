@@ -9,6 +9,8 @@ dist/
 web-build/
 expo-env.d.ts
 
+# protect it from the APIS leakage
+.env              
 # Native
 .kotlin/
 *.orig.*
