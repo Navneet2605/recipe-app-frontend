@@ -131,9 +131,6 @@ The app uses **TheMealDB API** for recipe data:
 
 ## 📱 App Screens
 
-
-## 📱 App Screenshots
-
 <div align="center">
 
 ### Main Application Screens
