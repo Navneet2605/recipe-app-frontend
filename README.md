@@ -37,38 +37,6 @@ A modern, feature-rich React Native recipe application built with Expo, offering
 - **TypeScript Configuration** - Type safety setup
 - **Git** - Version control
 
-## 📁 Project Structure
-
-
-recipe-app-frontend/
-├── app/                          # App Router pages
-│   ├── (auth)/                   # Authentication screens
-│   │   ├── sign-in.jsx
-│   │   ├── sign-up.jsx
-│   │   └── verify-email.jsx
-│   ├── (tabs)/                   # Tab navigation screens
-│   │   ├── index.jsx             # Home screen
-│   │   ├── search.jsx            # Search screen
-│   │   └── favorites.jsx         # Favorites screen
-│   └── recipe/[id].jsx           # Dynamic recipe detail screen
-├── components/                   # Reusable UI components
-│   ├── CategoryFilter.jsx
-│   ├── RecipeCard.jsx
-│   ├── LoadingSpinner.jsx
-│   ├── NoFavoritesFound.jsx
-│   └── SafeScreen.jsx
-├── services/                     # API services
-│   └── mealAPI.js
-├── hooks/                        # Custom React hooks
-│   └── useDebounce.js
-├── constants/                    # App constants
-│   ├── api.js
-│   └── colors.js
-├── assets/                       # Static assets
-│   ├── fonts/
-│   ├── images/
-│   └── styles/                   # Screen-specific styles
-└── README.md
 
 
 ## 🛠️ Installation & Setup
@@ -253,9 +221,6 @@ npm run lint
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
@@ -265,7 +230,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-For support, email your-email@example.com or create an issue in the repository.
+For support, email your-navneet3771@gmail.com or create an issue in the repository.
 
 ---
 
