@@ -314,7 +314,7 @@ npm run lint
 
 ## 📞 Support
 
-For support, navneet3771@gmail.com or create an issue in the repository.
+For support, email your-navneet3771@gmail.com or create an issue in the repository.
 
 ---
 
