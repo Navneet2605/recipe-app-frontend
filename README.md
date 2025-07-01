@@ -286,7 +286,7 @@ npm run lint
 </tr>
 <tr>
 <td align="center" colspan="2">
-<img src="./assets/images/recipedetail2.png" width="300" alt="Recipe Detail Extended">
+<img src="./assets/images/recipe-detail2.png" width="300" alt="Recipe Detail Extended">
 <br>
 <strong>📋 Extended Recipe View</strong>
 <br>
