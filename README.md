@@ -1,50 +1,272 @@
-# Welcome to your Expo app 👋
+# 🍳 Recipe App Frontend
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A modern, feature-rich React Native recipe application built with Expo, offering seamless recipe discovery, favorites management, and user authentication.
 
-## Get started
+## ✨ Features
 
-1. Install dependencies
+- 🔍 **Smart Recipe Search** - Find recipes with real-time search and debounced queries
+- 📱 **Category Filtering** - Browse recipes by categories with intuitive filters
+- ❤️ **Favorites Management** - Save and organize your favorite recipes
+- 🔐 **User Authentication** - Secure sign-up, sign-in, and email verification
+- 📖 **Detailed Recipe View** - Complete recipe information with ingredients and instructions
+- 🎨 **Modern UI/UX** - Clean, responsive design with smooth animations
+- 🌙 **Optimized Performance** - Efficient loading states and error handling
 
-   ```bash
+## 🚀 Tech Stack
+
+### **Frontend Framework**
+- **React Native** with **Expo** - Cross-platform mobile development
+- **Expo Router** - File-based navigation system
+
+### **Core Libraries**
+- **React Hooks** - Modern state management and lifecycle handling
+- **Custom Hooks** - Reusable logic with `useDebounce` for search optimization
+
+### **UI & Styling**
+- **StyleSheet API** - Modular styling architecture
+- **Custom Components** - Reusable UI components
+- **Responsive Design** - Adaptive layouts for different screen sizes
+
+### **API Integration**
+- **Fetch API** - HTTP client for external API calls
+- **TheMealDB API** - Recipe data source
+- **Custom API Service** - Centralized API management
+
+### **Development Tools**
+- **ESLint** - Code linting and formatting
+- **TypeScript Configuration** - Type safety setup
+- **Git** - Version control
+
+## 📁 Project Structure
+
+
+recipe-app-frontend/
+├── app/                          # App Router pages
+│   ├── (auth)/                   # Authentication screens
+│   │   ├── sign-in.jsx
+│   │   ├── sign-up.jsx
+│   │   └── verify-email.jsx
+│   ├── (tabs)/                   # Tab navigation screens
+│   │   ├── index.jsx             # Home screen
+│   │   ├── search.jsx            # Search screen
+│   │   └── favorites.jsx         # Favorites screen
+│   └── recipe/[id].jsx           # Dynamic recipe detail screen
+├── components/                   # Reusable UI components
+│   ├── CategoryFilter.jsx
+│   ├── RecipeCard.jsx
+│   ├── LoadingSpinner.jsx
+│   ├── NoFavoritesFound.jsx
+│   └── SafeScreen.jsx
+├── services/                     # API services
+│   └── mealAPI.js
+├── hooks/                        # Custom React hooks
+│   └── useDebounce.js
+├── constants/                    # App constants
+│   ├── api.js
+│   └── colors.js
+├── assets/                       # Static assets
+│   ├── fonts/
+│   ├── images/
+│   └── styles/                   # Screen-specific styles
+└── README.md
+
+
+## 🛠️ Installation & Setup
+
+### Prerequisites
+- **Node.js** (v16 or higher)
+- **npm** or **yarn**
+- **Expo CLI** (`npm install -g @expo/cli`)
+- **iOS Simulator** (for iOS development) or **Android Studio** (for Android)
+
+### Quick Start
+
+1. **Clone the repository**
+
+   git clone <repository-url>
+   cd recipe-app-frontend
+
+
+2. **Install dependencies**
+
    npm install
-   ```
+   # or
+   yarn install
 
-2. Start the app
 
-   ```bash
+3. **Start the development server**
+
    npx expo start
-   ```
 
-In the output, you'll find options to open the app in a
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+4. **Run on device/simulator**
+   - Press `i` for iOS simulator
+   - Press `a` for Android emulator
+   - Scan QR code with Expo Go app on your device
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 🔧 Configuration
 
-## Get a fresh project
+### Environment Setup
+Create a `.env` file in the root directory:
 
-When you're ready, run:
 
-```bash
-npm run reset-project
-```
+# API Configuration
+EXPO_PUBLIC_MEAL_API_BASE_URL=https://www.themealdb.com/api/json/v1/1
+EXPO_PUBLIC_API_KEY=your_api_key_here
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+# Authentication (if using custom backend)
+EXPO_PUBLIC_AUTH_API_URL=your_auth_api_url
+EXPO_PUBLIC_JWT_SECRET=your_jwt_secret
 
-## Learn more
 
-To learn more about developing your project with Expo, look at the following resources:
+### API Integration
+The app uses **TheMealDB API** for recipe data:
+- **Base URL**: `https://www.themealdb.com/api/json/v1/1`
+- **Free tier**: No API key required
+- **Endpoints used**:
+  - Search recipes: `/search.php?s={query}`
+  - Get by category: `/filter.php?c={category}`
+  - Recipe details: `/lookup.php?i={id}`
+  - Categories list: `/categories.php`
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## 📱 App Screens
 
-## Join the community
+### 🏠 Home Screen (`app/(tabs)/index.jsx`)
+- Featured recipes display
+- Category-based browsing
+- Quick access to popular recipes
 
-Join our community of developers creating universal apps.
+### 🔍 Search Screen (`app/(tabs)/search.jsx`)
+- Real-time recipe search with debouncing
+- Category filtering
+- Search results with recipe cards
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### ❤️ Favorites Screen (`app/(tabs)/favorites.jsx`)
+- User's saved favorite recipes
+- Easy management of favorites
+- Empty state handling
+
+### 📖 Recipe Detail Screen (`app/recipe/[id].jsx`)
+- Complete recipe information
+- Ingredients list
+- Step-by-step instructions
+- Add/remove from favorites
+
+### 🔐 Authentication Screens (`app/(auth)/`)
+- **Sign In**: User login with validation
+- **Sign Up**: New user registration
+- **Email Verification**: Account verification flow
+
+## 🎨 Key Components
+
+### `RecipeCard.jsx`
+Reusable recipe card component with:
+- Recipe image and title
+- Category and area information
+- Favorite toggle functionality
+- Navigation to recipe details
+
+### `CategoryFilter.jsx`
+Dynamic category filtering with:
+- Horizontal scrollable categories
+- Active state management
+- Smooth selection animations
+
+### `LoadingSpinner.jsx`
+Consistent loading states across the app
+
+### `SafeScreen.jsx`
+Safe area wrapper for consistent screen layouts
+
+## 🔗 Custom Hooks
+
+### `useDebounce.js`
+Optimizes search performance by debouncing user input:
+
+const debouncedSearchTerm = useDebounce(searchTerm, 500);
+
+
+## 🎯 Performance Optimizations
+
+- **Debounced Search** - Reduces API calls during typing
+- **Image Lazy Loading** - Optimized image rendering
+- **Component Memoization** - Prevents unnecessary re-renders
+- **Efficient State Management** - Minimal state updates
+- **Error Boundaries** - Graceful error handling
+
+## 🚀 Build & Deployment
+
+### Development Build
+
+npx expo start --dev-client
+
+
+### Production Build
+
+# For iOS
+npx expo build:ios
+
+# For Android
+npx expo build:android
+
+# Using EAS Build (recommended)
+npx eas build --platform all
+
+
+### Publishing Updates
+
+npx expo publish
+
+
+## 🧪 Testing
+
+
+# Run tests
+npm test
+
+# Run with coverage
+npm run test:coverage
+
+# Run linting
+npm run lint
+
+
+## 📄 Scripts
+
+
+{
+  "start": "expo start",
+  "android": "expo start --android",
+  "ios": "expo start --ios",
+  "web": "expo start --web",
+  "build": "expo build",
+  "lint": "eslint .",
+  "test": "jest"
+}
+
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- **TheMealDB** - For providing the comprehensive recipe API
+- **Expo Team** - For the amazing development platform
+- **React Native Community** - For continuous support and resources
+
+## 📞 Support
+
+For support, email your-email@example.com or create an issue in the repository.
+
+---
+
+**Made with ❤️ using React Native & Expo**
