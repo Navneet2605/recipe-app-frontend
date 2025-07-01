@@ -37,6 +37,38 @@ A modern, feature-rich React Native recipe application built with Expo, offering
 - **TypeScript Configuration** - Type safety setup
 - **Git** - Version control
 
+## 📁 Project Structure
+
+
+recipe-app-frontend/
+├── app/                          # App Router pages
+│   ├── (auth)/                   # Authentication screens
+│   │   ├── sign-in.jsx
+│   │   ├── sign-up.jsx
+│   │   └── verify-email.jsx
+│   ├── (tabs)/                   # Tab navigation screens
+│   │   ├── index.jsx             # Home screen
+│   │   ├── search.jsx            # Search screen
+│   │   └── favorites.jsx         # Favorites screen
+│   └── recipe/[id].jsx           # Dynamic recipe detail screen
+├── components/                   # Reusable UI components
+│   ├── CategoryFilter.jsx
+│   ├── RecipeCard.jsx
+│   ├── LoadingSpinner.jsx
+│   ├── NoFavoritesFound.jsx
+│   └── SafeScreen.jsx
+├── services/                     # API services
+│   └── mealAPI.js
+├── hooks/                        # Custom React hooks
+│   └── useDebounce.js
+├── constants/                    # App constants
+│   ├── api.js
+│   └── colors.js
+├── assets/                       # Static assets
+│   ├── fonts/
+│   ├── images/
+│   └── styles/                   # Screen-specific styles
+└── README.md
 
 
 ## 🛠️ Installation & Setup
@@ -77,6 +109,25 @@ A modern, feature-rich React Native recipe application built with Expo, offering
 ### Environment Setup
 Create a `.env` file in the root directory:
 
+
+# API Configuration
+EXPO_PUBLIC_MEAL_API_BASE_URL=https://www.themealdb.com/api/json/v1/1
+EXPO_PUBLIC_API_KEY=your_api_key_here
+
+# Authentication (if using custom backend)
+EXPO_PUBLIC_AUTH_API_URL=your_auth_api_url
+EXPO_PUBLIC_JWT_SECRET=your_jwt_secret
+
+
+### API Integration
+The app uses **TheMealDB API** for recipe data:
+- **Base URL**: `https://www.themealdb.com/api/json/v1/1`
+- **Free tier**: No API key required
+- **Endpoints used**:
+  - Search recipes: `/search.php?s={query}`
+  - Get by category: `/filter.php?c={category}`
+  - Recipe details: `/lookup.php?i={id}`
+  - Categories list: `/categories.php`
 
 ## 📱 App Screens
 
@@ -194,6 +245,58 @@ npm run lint
 }
 
 
+## 📱 App Screenshots
+
+<div align="center">
+
+### Main Application Screens
+
+<table>
+<tr>
+<td align="center" width="50%">
+<img src="./assets/images/home.png" width="300" alt="Home Screen">
+<br>
+<strong>🏠 Home Screen</strong>
+<br>
+<em>Browse featured recipes and categories</em>
+</td>
+<td align="center" width="50%">
+<img src="./assets/images/search.png" width="300" alt="Search Screen">
+<br>
+<strong>🔍 Search Screen</strong>
+<br>
+<em>Real-time recipe search with filters</em>
+</td>
+</tr>
+<tr>
+<td align="center" width="50%">
+<img src="./assets/images/favorites.png" width="300" alt="Favorites Screen">
+<br>
+<strong>❤️ Favorites Screen</strong>
+<br>
+<em>Manage your saved favorite recipes</em>
+</td>
+<td align="center" width="50%">
+<img src="./assets/images/recipe-detail.png" width="300" alt="Recipe Detail Screen">
+<br>
+<strong>📖 Recipe Detail</strong>
+<br>
+<em>Complete recipe information and instructions</em>
+</td>
+</tr>
+<tr>
+<td align="center" colspan="2">
+<img src="./assets/images/recipedetail2.png" width="300" alt="Recipe Detail Extended">
+<br>
+<strong>📋 Extended Recipe View</strong>
+<br>
+<em>Detailed ingredients and cooking steps</em>
+</td>
+</tr>
+</table>
+
+</div>
+
 ## 🤝 Contributing
 
 1. Fork the repository
@@ -211,7 +314,7 @@ npm run lint
 
 ## 📞 Support
 
-For support, email your-navneet3771@gmail.com or create an issue in the repository.
+For support, navneet3771@gmail.com or create an issue in the repository.
 
 ---
 
