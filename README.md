@@ -131,31 +131,59 @@ The app uses **TheMealDB API** for recipe data:
 
 ## 📱 App Screens
 
-### 🏠 Home Screen (`app/(tabs)/index.jsx`)
-- Featured recipes display
-- Category-based browsing
-- Quick access to popular recipes
 
-### 🔍 Search Screen (`app/(tabs)/search.jsx`)
-- Real-time recipe search with debouncing
-- Category filtering
-- Search results with recipe cards
+## 📱 App Screenshots
 
-### ❤️ Favorites Screen (`app/(tabs)/favorites.jsx`)
-- User's saved favorite recipes
-- Easy management of favorites
-- Empty state handling
+<div align="center">
 
-### 📖 Recipe Detail Screen (`app/recipe/[id].jsx`)
-- Complete recipe information
-- Ingredients list
-- Step-by-step instructions
-- Add/remove from favorites
+### Main Application Screens
 
-### 🔐 Authentication Screens (`app/(auth)/`)
-- **Sign In**: User login with validation
-- **Sign Up**: New user registration
-- **Email Verification**: Account verification flow
+<table>
+<tr>
+<td align="center" width="50%">
+<img src="./assets/images/home.png" width="300" alt="Home Screen">
+<br>
+<strong>🏠 Home Screen</strong>
+<br>
+<em>Browse featured recipes and categories</em>
+</td>
+<td align="center" width="50%">
+<img src="./assets/images/search.png" width="300" alt="Search Screen">
+<br>
+<strong>🔍 Search Screen</strong>
+<br>
+<em>Real-time recipe search with filters</em>
+</td>
+</tr>
+<tr>
+<td align="center" width="50%">
+<img src="./assets/images/favorites.png" width="300" alt="Favorites Screen">
+<br>
+<strong>❤️ Favorites Screen</strong>
+<br>
+<em>Manage your saved favorite recipes</em>
+</td>
+<td align="center" width="50%">
+<img src="./assets/images/recipe-detail.png" width="300" alt="Recipe Detail Screen">
+<br>
+<strong>📖 Recipe Detail</strong>
+<br>
+<em>Complete recipe information and instructions</em>
+</td>
+</tr>
+<tr>
+<td align="center" colspan="2">
+<img src="./assets/images/recipe-detail2.png" width="300" alt="Recipe Detail Extended">
+<br>
+<strong>📋 Extended Recipe View</strong>
+<br>
+<em>Detailed ingredients and cooking steps</em>
+</td>
+</tr>
+</table>
+
+</div>
+
 
 ## 🎨 Key Components
 
@@ -245,57 +273,6 @@ npm run lint
 }
 
 
-## 📱 App Screenshots
-
-<div align="center">
-
-### Main Application Screens
-
-<table>
-<tr>
-<td align="center" width="50%">
-<img src="./assets/images/home.png" width="300" alt="Home Screen">
-<br>
-<strong>🏠 Home Screen</strong>
-<br>
-<em>Browse featured recipes and categories</em>
-</td>
-<td align="center" width="50%">
-<img src="./assets/images/search.png" width="300" alt="Search Screen">
-<br>
-<strong>🔍 Search Screen</strong>
-<br>
-<em>Real-time recipe search with filters</em>
-</td>
-</tr>
-<tr>
-<td align="center" width="50%">
-<img src="./assets/images/favorites.png" width="300" alt="Favorites Screen">
-<br>
-<strong>❤️ Favorites Screen</strong>
-<br>
-<em>Manage your saved favorite recipes</em>
-</td>
-<td align="center" width="50%">
-<img src="./assets/images/recipe-detail.png" width="300" alt="Recipe Detail Screen">
-<br>
-<strong>📖 Recipe Detail</strong>
-<br>
-<em>Complete recipe information and instructions</em>
-</td>
-</tr>
-<tr>
-<td align="center" colspan="2">
-<img src="./assets/images/recipe-detail2.png" width="300" alt="Recipe Detail Extended">
-<br>
-<strong>📋 Extended Recipe View</strong>
-<br>
-<em>Detailed ingredients and cooking steps</em>
-</td>
-</tr>
-</table>
-
-</div>
 
 ## 🤝 Contributing
 
