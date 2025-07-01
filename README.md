@@ -78,25 +78,6 @@ A modern, feature-rich React Native recipe application built with Expo, offering
 Create a `.env` file in the root directory:
 
 
-# API Configuration
-EXPO_PUBLIC_MEAL_API_BASE_URL=https://www.themealdb.com/api/json/v1/1
-EXPO_PUBLIC_API_KEY=your_api_key_here
-
-# Authentication (if using custom backend)
-EXPO_PUBLIC_AUTH_API_URL=your_auth_api_url
-EXPO_PUBLIC_JWT_SECRET=your_jwt_secret
-
-
-### API Integration
-The app uses **TheMealDB API** for recipe data:
-- **Base URL**: `https://www.themealdb.com/api/json/v1/1`
-- **Free tier**: No API key required
-- **Endpoints used**:
-  - Search recipes: `/search.php?s={query}`
-  - Get by category: `/filter.php?c={category}`
-  - Recipe details: `/lookup.php?i={id}`
-  - Categories list: `/categories.php`
-
 ## 📱 App Screens
 
 ### 🏠 Home Screen (`app/(tabs)/index.jsx`)
