@@ -74,7 +74,7 @@ const HomeScreen = () => {
     setSelectedCategory(category);
     await loadCategoryData(category);
   };
-
+// check for the refres button and loading state 
   const onRefresh = async () => {
     setRefreshing(true);
     // await sleep(2000);
@@ -199,6 +199,7 @@ const HomeScreen = () => {
               contentContainerStyle={homeStyles.recipesGrid}
               scrollEnabled={false}
               // ListEmptyComponent={}
+              //resembles the other UI when the list is empty
             />
           ) : (
             <View style={homeStyles.emptyState}>
