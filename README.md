@@ -12,122 +12,6 @@ A modern, feature-rich React Native recipe application built with Expo, offering
 - 🎨 **Modern UI/UX** - Clean, responsive design with smooth animations
 - 🌙 **Optimized Performance** - Efficient loading states and error handling
 
-## 🚀 Tech Stack
-
-### **Frontend Framework**
-- **React Native** with **Expo** - Cross-platform mobile development
-- **Expo Router** - File-based navigation system
-
-### **Core Libraries**
-- **React Hooks** - Modern state management and lifecycle handling
-- **Custom Hooks** - Reusable logic with `useDebounce` for search optimization
-
-### **UI & Styling**
-- **StyleSheet API** - Modular styling architecture
-- **Custom Components** - Reusable UI components
-- **Responsive Design** - Adaptive layouts for different screen sizes
-
-### **API Integration**
-- **Fetch API** - HTTP client for external API calls
-- **TheMealDB API** - Recipe data source
-- **Custom API Service** - Centralized API management
-
-### **Development Tools**
-- **ESLint** - Code linting and formatting
-- **TypeScript Configuration** - Type safety setup
-- **Git** - Version control
-
-## 📁 Project Structure
-
-
-recipe-app-frontend/
-├── app/                          # App Router pages
-│   ├── (auth)/                   # Authentication screens
-│   │   ├── sign-in.jsx
-│   │   ├── sign-up.jsx
-│   │   └── verify-email.jsx
-│   ├── (tabs)/                   # Tab navigation screens
-│   │   ├── index.jsx             # Home screen
-│   │   ├── search.jsx            # Search screen
-│   │   └── favorites.jsx         # Favorites screen
-│   └── recipe/[id].jsx           # Dynamic recipe detail screen
-├── components/                   # Reusable UI components
-│   ├── CategoryFilter.jsx
-│   ├── RecipeCard.jsx
-│   ├── LoadingSpinner.jsx
-│   ├── NoFavoritesFound.jsx
-│   └── SafeScreen.jsx
-├── services/                     # API services
-│   └── mealAPI.js
-├── hooks/                        # Custom React hooks
-│   └── useDebounce.js
-├── constants/                    # App constants
-│   ├── api.js
-│   └── colors.js
-├── assets/                       # Static assets
-│   ├── fonts/
-│   ├── images/
-│   └── styles/                   # Screen-specific styles
-└── README.md
-
-
-## 🛠️ Installation & Setup
-
-### Prerequisites
-- **Node.js** (v16 or higher)
-- **npm** or **yarn**
-- **Expo CLI** (`npm install -g @expo/cli`)
-- **iOS Simulator** (for iOS development) or **Android Studio** (for Android)
-
-### Quick Start
-
-1. **Clone the repository**
-
-   git clone <repository-url>
-   cd recipe-app-frontend
-
-
-2. **Install dependencies**
-
-   npm install
-   # or
-   yarn install
-
-
-3. **Start the development server**
-
-   npx expo start
-
-
-4. **Run on device/simulator**
-   - Press `i` for iOS simulator
-   - Press `a` for Android emulator
-   - Scan QR code with Expo Go app on your device
-
-## 🔧 Configuration
-
-### Environment Setup
-Create a `.env` file in the root directory:
-
-
-# API Configuration
-EXPO_PUBLIC_MEAL_API_BASE_URL=https://www.themealdb.com/api/json/v1/1
-EXPO_PUBLIC_API_KEY=your_api_key_here
-
-# Authentication (if using custom backend)
-EXPO_PUBLIC_AUTH_API_URL=your_auth_api_url
-EXPO_PUBLIC_JWT_SECRET=your_jwt_secret
-
-
-### API Integration
-The app uses **TheMealDB API** for recipe data:
-- **Base URL**: `https://www.themealdb.com/api/json/v1/1`
-- **Free tier**: No API key required
-- **Endpoints used**:
-  - Search recipes: `/search.php?s={query}`
-  - Get by category: `/filter.php?c={category}`
-  - Recipe details: `/lookup.php?i={id}`
-  - Categories list: `/categories.php`
 
 ## 📱 App Screens
 
@@ -180,6 +64,83 @@ The app uses **TheMealDB API** for recipe data:
 </table>
 
 </div>
+
+## 🚀 Tech Stack
+
+### **Frontend Framework**
+- **React Native** with **Expo** - Cross-platform mobile development
+- **Expo Router** - File-based navigation system
+
+### **Core Libraries**
+- **React Hooks** - Modern state management and lifecycle handling
+- **Custom Hooks** - Reusable logic with `useDebounce` for search optimization
+
+### **UI & Styling**
+- **StyleSheet API** - Modular styling architecture
+- **Custom Components** - Reusable UI components
+- **Responsive Design** - Adaptive layouts for different screen sizes
+
+### **API Integration**
+- **Fetch API** - HTTP client for external API calls
+- **TheMealDB API** - Recipe data source
+- **Custom API Service** - Centralized API management
+
+### **Development Tools**
+- **ESLint** - Code linting and formatting
+- **TypeScript Configuration** - Type safety setup
+- **Git** - Version control
+
+
+## 🛠️ Installation & Setup
+
+### Prerequisites
+- **Node.js** (v16 or higher)
+- **npm** or **yarn**
+- **Expo CLI** (`npm install -g @expo/cli`)
+- **iOS Simulator** (for iOS development) or **Android Studio** (for Android)
+
+### Quick Start
+
+1. **Clone the repository**
+
+   git clone <repository-url>
+   cd recipe-app-frontend
+
+
+2. **Install dependencies**
+
+   npm install
+   # or
+   yarn install
+
+
+3. **Start the development server**
+
+   npx expo start
+
+
+4. **Run on device/simulator**
+   - Press `i` for iOS simulator
+   - Press `a` for Android emulator
+   - Scan QR code with Expo Go app on your device
+
+## 🔧 Configuration
+
+### Environment Setup
+Create a `.env` file in the root directory:
+
+
+# API Configuration
+EXPO_PUBLIC_MEAL_API_BASE_URL=https://www.themealdb.com/api/json/v1/1
+EXPO_PUBLIC_API_KEY=your_api_key_here
+
+# Authentication (if using custom backend)
+EXPO_PUBLIC_AUTH_API_URL=your_auth_api_url
+EXPO_PUBLIC_JWT_SECRET=your_jwt_secret
+
+
+
+
 
 
 ## 🎨 Key Components
