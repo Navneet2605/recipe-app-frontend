@@ -1,14 +1,14 @@
-import { View, Text, ScrollView, TouchableOpacity, FlatList, RefreshControl } from "react-native";
-import { useEffect, useState } from "react";
-import { useRouter } from "expo-router";
-import { MealAPI } from "../../services/mealAPI";
-import { homeStyles } from "../../assets/styles/home.styles";
-import { Image } from "expo-image";
-import { COLORS } from "../../constants/colors";
 import { Ionicons } from "@expo/vector-icons";
+import { Image } from "expo-image";
+import { useRouter } from "expo-router";
+import { useEffect, useState } from "react";
+import { FlatList, RefreshControl, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { homeStyles } from "../../assets/styles/home.styles";
 import CategoryFilter from "../../components/CategoryFilter";
-import RecipeCard from "../../components/RecipeCard";
 import LoadingSpinner from "../../components/LoadingSpinner";
+import RecipeCard from "../../components/RecipeCard";
+import { COLORS } from "../../constants/colors";
+import { MealAPI } from "../../services/mealAPI";
 
  // const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -31,16 +31,18 @@ const HomeScreen = () => {
         MealAPI.getRandomMeal(),
       ]);
 
-      const transformedCategories = apiCategories.map((cat, index) => ({
-        id: index + 1,
-        name: cat.strCategory,
-        image: cat.strCategoryThumb,
-        description: cat.strCategoryDescription,
-      }));
+      const transformedCategories = apiCategories
+        .map((cat, index) => ({
+          id: index + 1,
+          name: cat.strCategory,
+          image: cat.strCategoryThumb,
+          description: cat.strCategoryDescription,
+        }))
+        .filter(category => category.name !== 'Beef' && category.name !== 'Pork'); // Remove Beef and Pork  category
 
       setCategories(transformedCategories);
 
-      if (!selectedCategory) setSelectedCategory(transformedCategories[1].name);
+      if (!selectedCategory) setSelectedCategory(transformedCategories[0].name);
 
       const transformedMeals = randomMeals
         .map((meal) => MealAPI.transformMealData(meal))
